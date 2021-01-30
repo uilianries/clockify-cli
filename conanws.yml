@@ -1,0 +1,6 @@
+editables:
+  clockify_consumer/0.1@uilianries/testing:
+    path: consumer
+layout: conan_layout.ini
+workspace_generator: cmake
+root: clockify_consumer/0.1@uilianries/testing

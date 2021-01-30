@@ -1,0 +1,3 @@
+/home/uilian/Development/clockify-cli/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/uilian/Development/clockify-cli/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/uilian/Development/clockify-cli/cmake-build-debug/CMakeFiles/clockify_cli.dir
