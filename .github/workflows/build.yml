@@ -3,11 +3,13 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./build
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: pip install conan
-      - run: mkdir build && cd build
       - run: conan workspace install ../conanws.yml
       - run: cmake .. -DCMAKE_BUILD_TYPE=Release
       - run: cmake --build .
