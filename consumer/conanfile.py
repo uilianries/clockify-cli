@@ -13,7 +13,7 @@ class ClockifyConsumerConan(ConanFile):
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
     exports_sources = ["clockify_consumer.hpp", "clockify_consumer.cpp", "CMakeLists.txt"]
-    generators = "cmake"
+    generators = "cmake", "cmake_find_package_multi"
     requires = ["nlohmann_json/3.9.1", "cpr/1.5.2"]
     _cmake = None
 

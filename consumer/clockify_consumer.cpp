@@ -11,7 +11,7 @@ ClockifyConsumer::ClockifyConsumer(const std::string& api_key)
 }
 
 nlohmann::json ClockifyConsumer::get_user_info() {
-    const std::string url = API_ENDPOINT + "/user"
+    const std::string url = API_ENDPOINT + "/user";
     cpr::Response response = cpr::Get(cpr::Url{url});
     return nlohmann::json::parse(response.text);
 }
