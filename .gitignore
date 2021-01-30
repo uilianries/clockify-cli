@@ -3,3 +3,9 @@ venv/
 build/
 cmake-build-debug/
 cmake-build-release/
+test/conan.lock
+test/conanbuildinfo.cmake
+test/conanbuildinfo.txt
+test/conaninfo.txt
+test/graph_info.json
+

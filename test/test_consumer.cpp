@@ -1,15 +1,16 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
+#include <iostream>
+
 #include "clockify_consumer.hpp"
 
 
 TEST_CASE("Get user info", "[user]" ) {
-    consumer = ClockifyConsumer("YBVVkGowgCBtyfx3")
-    const auto response = consumer.user_info()
-
-    REQUIRE( Factorial(3) == 6 );
-    REQUIRE( Factorial(10) == 3628800 );
+    ClockifyConsumer consumer("YBVVkGowgCBtyfx3");
+    auto response = consumer.get_user_info();
+    std::cout << "RESPONSE: " << response << std::endl;
+    REQUIRE(response["status"] == "ACTIVE");
 }
 
 

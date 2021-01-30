@@ -13,8 +13,7 @@ class ClockifyConsumerConan(ConanFile):
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
     exports_sources = ["clockify_consumer.hpp", "clockify_consumer.cpp", "CMakeLists.txt"]
-    generators = "cmake", "cmake_find_package_multi"
-    requires = ["nlohmann_json/3.9.1", "cpr/1.5.2"]
+    generators = "cmake"
     _cmake = None
 
     def config_options(self):
@@ -24,6 +23,13 @@ class ClockifyConsumerConan(ConanFile):
     def validate(self):
         if self.options.shared:
             del self.options.fPIC
+
+    def requirements(self):
+        self.requires("nlohmann_json/3.9.1")
+        self.requires("cpr/1.5.2")
+
+        if self.develop:
+            self.requires("catch2/2.13.4")
 
     def _configure_cmake(self):
         if not self._cmake:
@@ -41,4 +47,6 @@ class ClockifyConsumerConan(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = [self.name]
+        if not self.in_local_cache:
+            self.cpp_info.lib_dirs = ["build/lib"]
 
