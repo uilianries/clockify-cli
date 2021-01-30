@@ -5,11 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./build
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - run: pip install conan
-      - run: conan workspace install ../conanws.yml
-      - run: cmake .. -DCMAKE_BUILD_TYPE=Release
-      - run: cmake --build .
+
+      - name: "Setup"
+        run: pip install conan && mkdir build
+
+      - name: "Build artifacts"
+        working-directory: ./build
+        run: |
+          conan workspace install ../conanws.yml
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
