@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/clockify_cli.dir/main.cpp.o CMakeFiles/clockify_cli.dir/consumer/clockify_consumer.cpp.o -o clockify_cli 
