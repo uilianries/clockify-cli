@@ -1,3 +1,5 @@
+![clockify_cli](https://github.com/uilianries/clockify-cli/workflows/clockify_cli/badge.svg)
+
 # Clockify CLI
 
 #### About
