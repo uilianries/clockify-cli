@@ -1,7 +1,7 @@
 name: clockify_cli
 on: [push, pull_request]
 jobs:
-  cpplint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
